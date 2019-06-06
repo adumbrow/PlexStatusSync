@@ -31,7 +31,7 @@ def getWatchedStatus( connection, type ) :
     #get the status of what we are looking at.
     items = connection.library.section(type)
     for item in items.search() :
-        if item.isWatched
+        if item.isWatched()
             print(item.title + " is watched")
     return;
 
