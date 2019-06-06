@@ -30,11 +30,10 @@ def getPlexConnection( plexserver, token ) :
 def getWatchedStatus( connection, type ) :
     #get the status of what we are looking at.
     items = connection.library.section(type)
-    for item in items.search()
+    for item in items.search() :
         if item.isWatched
             print(item.title + " is watched")
     return;
-
 
 '''
 #Create connection
