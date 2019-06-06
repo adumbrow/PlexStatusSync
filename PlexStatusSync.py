@@ -31,9 +31,12 @@ def getWatchedStatus( connection, type ) :
     #get the status of what we are looking at.
     items = connection.Video.section(connection)
     for item in items.search() :
-        #if item.isWatched():
+        if item.isWatched() :
         print( item.title )
     return;
+
+plexConn = getPlexConnection( PlexServer,Token )
+getWatchedStatus( plexConn, 'Shows')
 
 '''
 #Create connection
