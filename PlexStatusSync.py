@@ -18,7 +18,7 @@ Token = sys.argv[2]
 
 #Function to create a connection to the Plex Server
 #TODO: Need to test this.
-def getPlexConnection( plexserver, token )
+def getPlexConnection( plexserver, token ) :
     #Connect to the Plex server
     from plexapi.server import PlexServer
     baseurl = 'http://' + plexserver + ':32400'
@@ -26,22 +26,22 @@ def getPlexConnection( plexserver, token )
     plex = PlexServer(baseurl, token)
     return plex;
 
-'''
 #Function to get the watched status of an item
-def getWatchedStatus( connection, type )
+def getWatchedStatus( connection, type ) :
     #get the status of what we are looking at.
     items = connection.library.section(type)
     for item in items.search()
         if item.isWatched
             print(item.title + " is watched")
     return;
-'''
 
-#Test code
+
+'''
 #Create connection
-getPlexConnection( PlexServer,Token )
+plexConn = getPlexConnection( PlexServer,Token )
 #get the unread movies
-movies = plex.library.section('Movies')
+movies = plexConn.library.section('Movies')
 #plexapi.video.Video.isWatched()?  https://python-plexapi.readthedocs.io/en/latest/modules/video.html#plexapi.video.Video.isWatched
 for video in movies.search(unwatched=True):
         print(video.title)
+'''
