@@ -26,3 +26,4 @@ data = '''{
   "facets": {}
 }'''
 response = requests.post(url, data=data)
+print(response)
