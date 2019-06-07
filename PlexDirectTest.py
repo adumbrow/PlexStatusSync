@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://172.24.11.48.:32400/?X-Plex-Token=WgQ6JgEQeTShpPYCzgk1'
+url = 'http://172.24.11.48.:32400/library/sections/29/al?X-Plex-Token=WgQ6JgEQeTShpPYCzgk1'
 data = '''{
   "query": {
     "bool": {
