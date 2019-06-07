@@ -25,5 +25,5 @@ data = '''{
   "sort": [],
   "facets": {}
 }'''
-response = requests.post(url, data=data)
-print(response.content)
+response = requests.get(url, data=data)
+print(response.text)
